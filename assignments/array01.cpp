@@ -23,7 +23,10 @@ int main(int argc, char const *argv[])
     }
     
     // print final sum
-    printf("Sum of value is %d",sum);
+    printf("Sum of value is %d\n",sum);
+
+    // print avg of array
+    printf("Avg of values is : %d", sum/n);
     
     return 0;
 }
