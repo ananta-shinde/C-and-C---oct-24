@@ -1,35 +1,24 @@
 #include<stdio.h>
-struct Product
-{
-    int pid;
-    float price;
-    char name[100];
-};
-
-// syntax :  return_type identifier(agrs){}
-
-void insertProduct(Product* list)
-{
-    printf("Enter product Id :");
-    scanf("%d",&list[0].pid);
-    printf("Enter product price :");
-    scanf("%d",&list[0].price);
-    printf("Enter product name :");
-    scanf("%s",list[0].name);
-}
-
+#include"MyMathFunctions.h"
 int main(int argc, char const *argv[])
 {
-    Product product_list[5];
+    double p,r, n,si;
+    int choice;
+    printf("********** Welcome ****************\n");
+    printf("Enter Investment Amount :");
+    scanf("%lf",&p);
+    printf("Choose period of investment :\n");
+    printf("1. 5 Years 2. 8 Years :");
+    scanf("%d",&choice);
+    if(choice == 1){
+        si = calculateSI(p,7.5,5);
+    }else{
+         si = calculateSI(p,8,8);
+    }
 
-    // search
-    // insert
-    insertProduct(product_list);
-    insertProduct(product_list);
-    insertProduct(product_list);
+    createNewFile("bankdata.txt","w");
+    
    
-    // delete
-    // print
     return 0;
 }
 
