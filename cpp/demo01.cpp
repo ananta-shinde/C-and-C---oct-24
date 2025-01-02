@@ -1,38 +1,45 @@
 #include<iostream>
 using namespace std;
 
-class Vehicle{
-     int RC_no;
-    
-    public:
-    string vehicle_no;
-    string brand_name;
-    float price;
-    float fuel_capacity;
-    bool isAC;
-};
-
-class Bus : public Vehicle
+class Car
 {
+    private:
+    
+    
+    string vehicle_no;
+    int no_of_seats;
+    string brand_name;
+    public:
+
+    Car(string name){
+        cout << "Car is created\n";
+        brand_name = name;
+    }
+
+    string getBrandName(){
+        return brand_name;
+    }
    
+    void startACar(){
+    cout << "car has started\n ";
+    }
+
+    void stopACar(){
+        cout << "car has stopped";
+    }
+
 };
 
-class Car{
-    int RC_no;
-    public:
-    string vehicle_no;
-    string brand_name;
-    float price;
-    float fuel_capacity;
-    bool isAC;
-};
+
 
 
 int main(int argc, char const *argv[])
 {
-    Bus b;
-    b.RC_no = 1000;
-    b.brand_name = "TATA";
-    b.RC_no = 5000;
-    return 0;
+    Car c1("BMW"),c2("TATA");
+    // c1.brand_name = "TATA";
+    // c2.brand_name = "SUZUKI";
+    // c1.brand_name = "BMW";
+    cout << c1.getBrandName();
+    c1.startACar();
+    c2.startACar();
 }
